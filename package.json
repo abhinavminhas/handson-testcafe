@@ -1,0 +1,11 @@
+{
+  "name": "testcafe",
+  "version": "1.0.0",
+  "description": "TestCafe Testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "testcafe chrome Tests/"
+  },
+  "author": "Abhinav Minhas",
+  "license": "ISC"
+}
