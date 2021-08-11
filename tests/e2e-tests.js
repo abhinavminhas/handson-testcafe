@@ -6,11 +6,11 @@ fixture ('Getting Started').page(url)
 
 test('E2E', async t => {
     await t.maximizeWindow();
-    await ExamplePage.Populate("Hello World!!");
-    await ExamplePage.SelectAllFeatures();
-    await ExamplePage.SelectOperatingSystem("Windows");
-    await ExamplePage.SelectTestCafeInterface("JavaScript API");
-    await ExamplePage.ProvideFeedback("Awesome !!");
-    await ExamplePage.SubmitFeedback();
-    await ThankYouPage.IsSubmitted();
+    await ExamplePage.populate("Hello World!!");
+    await ExamplePage.selectAllFeatures();
+    await ExamplePage.selectOperatingSystem("Windows");
+    await ExamplePage.selectTestCafeInterface("JavaScript API");
+    await ExamplePage.provideFeedback("Awesome !!");
+    await ExamplePage.submitFeedback();
+    await ThankYouPage.isSubmitted();
 });

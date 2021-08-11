@@ -5,25 +5,25 @@ fixture ('Getting Started').page(url)
 
 test('POPULATE INPUT', async t => {
     await t.maximizeWindow();
-    await ExamplePage.Populate("Hello World!!");
+    await ExamplePage.populate("Hello World!!");
 });
 
 test('SELECT FEATURES', async t => {
     await t.maximizeWindow();
-    await ExamplePage.SelectAllFeatures();
+    await ExamplePage.selectAllFeatures();
 });
 
 test('SET OS', async t => {
     await t.maximizeWindow();
-    await ExamplePage.SelectOperatingSystem("Windows");
+    await ExamplePage.selectOperatingSystem("Windows");
 });
 
 test('SELECT TEST CAFE INTERFACE', async t => {
     await t.maximizeWindow();
-    await ExamplePage.SelectTestCafeInterface("JavaScript API");
+    await ExamplePage.selectTestCafeInterface("JavaScript API");
 });
 
 test('ENTER FEEDBACK COMMENTS', async t => {
     await t.maximizeWindow();
-    await ExamplePage.ProvideFeedback("Awesome !!");
+    await ExamplePage.provideFeedback("Awesome !!");
 });

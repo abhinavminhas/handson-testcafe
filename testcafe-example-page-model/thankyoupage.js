@@ -6,7 +6,7 @@ class ThankYouPage{
     constructor() {
     }
 
-    async IsSubmitted () {
+    async isSubmitted () {
         var submissionTextValue = 'Thank you, Peter Parker!';
         await t
             .expect(headThankYou.innerText).eql(submissionTextValue);

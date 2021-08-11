@@ -14,12 +14,13 @@ const selectTestCafeInterface = Selector('#preferred-interface');
 const checkboxTriedTestCafe = Selector('#tried-test-cafe');
 const textareaFeedbackComments = Selector('#comments');
 const submitButton = Selector('#submit-button');
+const spanRateTestCafe = Selector('span[class*="ui-slider-handle"]');
 
 class ExamplePage{
     constructor() {
     }
     
-    async Populate (value) {
+    async populate (value) {
         await t
             .typeText(inputYourName, value)
             .expect(inputYourName.value).eql(value)
@@ -28,7 +29,7 @@ class ExamplePage{
             await t.expect(inputYourName.value).eql('Peter Parker');
     }
 
-    async SelectAllFeatures () {
+    async selectAllFeatures () {
         await t
             .click(checkboxSupportForTesting)
             .click(checkboxReUseJavaScript)
@@ -37,7 +38,7 @@ class ExamplePage{
             .click(checkboxAdvancedTraffic);
     }
     
-    async SelectOperatingSystem(value) {
+    async selectOperatingSystem(value) {
         if (value == "Windows") {
             await t.click(radioWindows);
         }
@@ -49,7 +50,7 @@ class ExamplePage{
         }
     }
 
-    async SelectTestCafeInterface(selectValue) {
+    async selectTestCafeInterface(selectValue) {
         const options = selectTestCafeInterface.find('option')
         await t
         .click(selectTestCafeInterface)
@@ -57,14 +58,14 @@ class ExamplePage{
         await t.expect(selectTestCafeInterface.value).eql(selectValue);
     }
 
-    async ProvideFeedback(feedbackValue) {
+    async provideFeedback(feedbackValue) {
         await t
         .click(checkboxTriedTestCafe)
         .typeText(textareaFeedbackComments, feedbackValue);
         await t.expect(textareaFeedbackComments.value).eql(feedbackValue);
     }
     
-    async SubmitFeedback() {
+    async submitFeedback() {
         await t
         .click(submitButton);
     }
