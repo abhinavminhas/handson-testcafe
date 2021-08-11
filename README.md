@@ -1,4 +1,4 @@
-# **Getting Started - Testcafe**
+# **Getting Started - TestCafe**
 >[TestCafe](https://testcafe.io/)<br />
 
 >*Ensure [Node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) are installed.*
