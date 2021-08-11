@@ -4,8 +4,8 @@
   "description": "TestCafe Testing",
   "main": "index.js",
   "scripts": {
-    "test": "testcafe chrome Tests/"
+    "test": "testcafe chrome tests/"
   },
   "author": "Abhinav Minhas",
-  "license": "ISC"
+  "license": "MIT"
 }
