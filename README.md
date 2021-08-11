@@ -11,29 +11,17 @@
 >````
 
 #### Run All Tests (local browsers)
->Edge
->````
->npx testcafe edge tests/
->````
->Chrome
->````
->npx testcafe chrome tests/
->````
->Firefox
->````
->npx testcafe firefox tests/
->````
+- Edge/Chrome/Firefox
+    >````
+    >npx testcafe edge tests/
+    >npx testcafe chrome tests/
+    >npx testcafe firefox tests/
+    >````
 
 #### Run All Tests (local browsers) - Headless
->Edge - Headless
->````
->npx testcafe edge:headless tests/
->````
->Chrome - Headless
->````
->npx testcafe chrome:headless tests/
->````
->Firefox - Headless
->````
->npx testcafe firefox:headless tests/
->````
+- Edge/Chrome/Firefox - Headless
+    >````
+    >npx testcafe edge:headless tests/
+    >npx testcafe chrome:headless tests/
+    >npx testcafe firefox:headless tests/
+    >````
