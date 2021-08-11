@@ -1,7 +1,8 @@
 # **Getting Started - Testcafe**
 >[TestCafe](https://testcafe.io/)
 
-*Ensure [Node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) are installed.*
+>*Ensure [Node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) are installed.*
+>*[Install TestCafe](https://testcafe.io/documentation/402834/guides/basic-guides/install-testcafe)*
 
 #### Install Dependencies
 >```
