@@ -58,10 +58,14 @@ class ExamplePage{
         await t.expect(selectTestCafeInterface.value).eql(selectValue);
     }
 
-    async provideFeedback(feedbackValue) {
+    async provideFeedback(rating, feedbackValue) {
         await t
         .click(checkboxTriedTestCafe)
-        .typeText(textareaFeedbackComments, feedbackValue);
+        .click(spanRateTestCafe);
+        for (let i=1; i<rating; i++){
+            await t.pressKey('right');
+        }
+        await t.typeText(textareaFeedbackComments, feedbackValue);
         await t.expect(textareaFeedbackComments.value).eql(feedbackValue);
     }
     

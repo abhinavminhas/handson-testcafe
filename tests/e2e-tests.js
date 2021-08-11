@@ -10,7 +10,7 @@ test('E2E', async t => {
     await ExamplePage.selectAllFeatures();
     await ExamplePage.selectOperatingSystem("Windows");
     await ExamplePage.selectTestCafeInterface("JavaScript API");
-    await ExamplePage.provideFeedback("Awesome !!");
+    await ExamplePage.provideFeedback(10, "Awesome !!");
     await ExamplePage.submitFeedback();
     await ThankYouPage.isSubmitted();
 });

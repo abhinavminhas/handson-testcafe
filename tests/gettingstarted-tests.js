@@ -25,5 +25,6 @@ test('SELECT TEST CAFE INTERFACE', async t => {
 
 test('ENTER FEEDBACK COMMENTS', async t => {
     await t.maximizeWindow();
-    await ExamplePage.provideFeedback("Awesome !!");
+    await ExamplePage.provideFeedback(10, "Awesome !!");
+    await t.wait(6000);
 });
