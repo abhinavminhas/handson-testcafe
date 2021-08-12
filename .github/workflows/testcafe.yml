@@ -7,15 +7,15 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest]
+        os: [windows-latest, macos-latest, ubuntu-latest]
         node: [14, 16]
     steps:
     - uses: actions/setup-node@v1
-      with:
+        with:
           node-version: ${{ matrix.node }}
-    - name: Check out the repository
-      uses: actions/checkout@v1
-    - name: Run tests
-      uses: DevExpress/testcafe-action@latest
-      with:
-          args: "chrome:headless -c 3 tests/"
+      - name: Check out the repository
+        uses: actions/checkout@v1
+      - name: Run tests
+        uses: DevExpress/testcafe-action@latest
+        with:
+            args: "chrome:headless -c 4 tests/"
