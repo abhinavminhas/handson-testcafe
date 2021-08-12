@@ -11,11 +11,11 @@ jobs:
         node: [14, 16]
     steps:
     - uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node }}
-      - name: Check out the repository
-        uses: actions/checkout@v1
-      - name: Run tests
-        uses: DevExpress/testcafe-action@latest
-        with:
-            args: "chrome:headless -c 4 tests/"
+      with:
+        node-version: ${{ matrix.node }}
+    - name: Check out the repository
+      uses: actions/checkout@v1
+    - name: Run tests
+      uses: DevExpress/testcafe-action@latest
+      with:
+          args: "chrome:headless -c 4 tests/"
