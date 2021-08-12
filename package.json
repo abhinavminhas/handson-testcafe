@@ -4,7 +4,9 @@
   "description": "TestCafe Automation Testing",
   "main": "index.js",
   "scripts": {
-    "test": "testcafe -c 4 chrome tests/"
+    "test:edge": "testcafe -c 4 edge tests/",
+    "test:chrome": "testcafe -c 4 chrome tests/",
+    "test:firfox": "testcafe -c 4 firfox tests/"
   },
   "author": "Abhinav Minhas",
   "license": "MIT",
