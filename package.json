@@ -1,11 +1,14 @@
 {
-  "name": "testcafe",
+  "name": "automation-tests",
   "version": "1.0.0",
-  "description": "TestCafe Testing",
+  "description": "TestCafe Automation Testing",
   "main": "index.js",
   "scripts": {
-    "test": "testcafe chrome tests/"
+    "test": "testcafe -c 4 chrome tests/"
   },
   "author": "Abhinav Minhas",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "testcafe": "^1.15.2"
+  }
 }
