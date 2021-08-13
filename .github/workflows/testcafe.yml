@@ -17,11 +17,11 @@ jobs:
         node-version: ${{ matrix.node }}
     - name: Check out the repository
       uses: actions/checkout@v1
-    - name: Run Tests (All Browsers - Headless)
+    - name: Run Tests (${{ matrix.headlessbrowser }}) Headless
       uses: DevExpress/testcafe-action@latest
       with:
           args: ${{ matrix.headlessbrowser }}:headless -c 6 tests/
-    - name: Run Tests (IE)
+    - name: Run Tests (${{ matrix.browser }})
       uses: DevExpress/testcafe-action@latest
       with:
           args: ${{ matrix.browser }} tests/
@@ -40,7 +40,7 @@ jobs:
         node-version: ${{ matrix.node }}
     - name: Check out the repository
       uses: actions/checkout@v1
-    - name: Run Tests (All Available Browsers - Headless)
+    - name: Run Tests (${{ matrix.headlessbrowser }}) Headless
       uses: DevExpress/testcafe-action@latest
       with:
           args: ${{ matrix.headlessbrowser }}:headless -c 6 tests/
