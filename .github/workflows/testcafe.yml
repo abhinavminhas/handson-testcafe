@@ -7,7 +7,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [macOs-latest]
+        os: [macos-11]
         node: [14, 16]
     steps:
     - uses: actions/setup-node@v1
