@@ -7,7 +7,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [macos-latest]
+        os: [windows-latest]
         node: [16.x]
     steps:
     - uses: actions/setup-node@v1
@@ -18,4 +18,4 @@ jobs:
     - name: Run tests (Edge - headless)
       uses: DevExpress/testcafe-action@latest
       with:
-          args: "chrome -c 4 tests/"
+          args: "edge:headless -c 6 tests/"
