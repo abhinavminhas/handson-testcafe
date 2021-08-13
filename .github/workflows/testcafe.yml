@@ -2,13 +2,13 @@ name: TestCafe Tests
 on: [push]
 
 jobs:
-  test:
+  test1:
     name: Run TestCafe Tests - (WINDOWS)
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         os: [windows-latest]
-        node: [12.x, 16.x]
+        node: [14.x, 16.x]
         browser: [ie]
         headlessbrowser: [edge, chrome, firefox]
     steps:
@@ -24,5 +24,24 @@ jobs:
     - name: Run Tests (IE)
       uses: DevExpress/testcafe-action@latest
       with:
-          args: ${{ matrix.browser }} -c 6 tests/
+          args: ${{ matrix.browser }} -c 2 tests/
+          
+  test2:
+    name: Run TestCafe Tests - (UBUNTU)
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node: [14.x, 16.x]
+        headlessbrowser: [chrome, firefox]
+    steps:
+    - uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node }}
+    - name: Check out the repository
+      uses: actions/checkout@v1
+    - name: Run Tests (All Available Browsers - Headless)
+      uses: DevExpress/testcafe-action@latest
+      with:
+          args: ${{ matrix.headlessbrowser }}:headless -c 6 tests/
           
