@@ -24,7 +24,7 @@ jobs:
     - name: Run Tests (IE)
       uses: DevExpress/testcafe-action@latest
       with:
-          args: ${{ matrix.browser }} -c 2 tests/
+          args: ${{ matrix.browser }} tests/
           
   test2:
     name: Run TestCafe Tests - (UBUNTU)
