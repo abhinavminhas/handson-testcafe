@@ -2,10 +2,13 @@ import ExamplePage from '../testcafe-example-page-model/examplepage';
 import ThankYouPage from '../testcafe-example-page-model/thankyoupage';
 
 const url = "http://devexpress.github.io/testcafe/example";
-fixture ('Getting Started').page(url)
+fixture ('Getting Started')
+.page(url)
+.beforeEach(async t => {
+    await t.maximizeWindow();
+})
 
 test('E2E', async t => {
-    await t.maximizeWindow();
     await ExamplePage.populate("Hello World!!");
     await ExamplePage.selectAllFeatures();
     await ExamplePage.selectOperatingSystem("Windows");
