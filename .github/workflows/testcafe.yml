@@ -3,27 +3,21 @@ on: [push]
 
 jobs:
   test:
-    name: Run TestCafe Tests
+    name: Run TestCafe Tests - (WINDOWS)
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         os: [windows-latest]
-        node: [16.x]
+        node: [12.x, 16.x]
+        browser: [edge:headless, chrome:headless, firefox:headless, ie]
     steps:
     - uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node }}
     - name: Check out the repository
       uses: actions/checkout@v1
-    - name: Run tests (Edge - Headless)
+    - name: Run Tests ${{ matrix.node }}
       uses: DevExpress/testcafe-action@latest
       with:
-          args: "edge:headless -c 6 tests/"
-    - name: Run tests (Chrome - Headless)
-      uses: DevExpress/testcafe-action@latest
-      with:
-          args: "chrome:headless -c 6 tests/"
-    - name: Run tests (Firefox - Headless)
-      uses: DevExpress/testcafe-action@latest
-      with:
-          args: "firefox:headless -c 6 tests/"
+          args: "${{ matrix.node }} -c 6 tests/"
+          
