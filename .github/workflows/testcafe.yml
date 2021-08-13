@@ -3,13 +3,12 @@ on: [push]
 
 jobs:
   test1:
-    name: Run TestCafe Tests - (WINDOWS)
+    name: TestCafe Tests - (WINDOWS/HEADLESS)
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         os: [windows-latest]
         node: [14.x, 16.x]
-        browser: [ie]
         headlessbrowser: [edge, chrome, firefox]
     steps:
     - uses: actions/setup-node@v1
@@ -21,13 +20,28 @@ jobs:
       uses: DevExpress/testcafe-action@latest
       with:
           args: ${{ matrix.headlessbrowser }}:headless -c 6 tests/
+          
+  test2:
+    name: TestCafe Tests - (WINDOWS/IE)
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [windows-latest]
+        node: [14.x, 16.x]
+        browser: [ie]
+    steps:
+    - uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node }}
+    - name: Check out the repository
+      uses: actions/checkout@v1
     - name: Run Tests (${{ matrix.browser }})
       uses: DevExpress/testcafe-action@latest
       with:
           args: ${{ matrix.browser }} tests/
           
-  test2:
-    name: Run TestCafe Tests - (UBUNTU)
+  test3:
+    name: TestCafe Tests - (UBUNTU)
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
