@@ -17,5 +17,4 @@ jobs:
       uses: actions/checkout@v1
     - name: Run tests (Edge - headless)
       uses: DevExpress/testcafe-action@latest
-      with:
-          args: "edge -c 4 tests/"
+      run: testcafe --list-browsers
