@@ -16,7 +16,7 @@ jobs:
         node-version: ${{ matrix.node }}
     - name: Check out the repository
       uses: actions/checkout@v1
-    - name: Run Tests ${{ matrix.node }}
+    - name: Run Tests
       uses: DevExpress/testcafe-action@latest
       with:
           args: "${{ matrix.node }} -c 6 tests/"
