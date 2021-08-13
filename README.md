@@ -11,11 +11,12 @@
 >````
 
 #### Run All Tests (local browsers)
-- Edge/Chrome/Firefox
+- Edge/Chrome/Firefox/IE
     >````
     >npx testcafe edge tests/
     >npx testcafe chrome tests/
     >npx testcafe firefox tests/
+    >npx testcafe ie tests/
     >````
 
 #### Run All Tests (local browsers) - Headless
