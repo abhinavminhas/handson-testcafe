@@ -18,4 +18,4 @@ jobs:
     - name: Run tests (Edge - headless)
       uses: DevExpress/testcafe-action@latest
       with:
-          args: "firefox:headless -c 4 tests/"
+          args: "edge -c 4 tests/"
