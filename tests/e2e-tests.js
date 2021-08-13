@@ -1,5 +1,5 @@
-import ExamplePage from '../testcafe-example-page-model/examplepage';
-import ThankYouPage from '../testcafe-example-page-model/thankyoupage';
+import ExamplePage from '../testcafe-example-page-model/example-page';
+import ThankYouPage from '../testcafe-example-page-model/thankyou-page';
 
 const url = "http://devexpress.github.io/testcafe/example";
 fixture ('Getting Started')

@@ -1,4 +1,4 @@
-import ExamplePage from '../testcafe-example-page-model/examplepage';
+import ExamplePage from '../testcafe-example-page-model/example-page';
 
 const url = "http://devexpress.github.io/testcafe/example";
 fixture ('Getting Started')
