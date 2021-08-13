@@ -9,7 +9,7 @@ jobs:
       matrix:
         os: [windows-latest]
         node: [12.x, 16.x]
-        browser: [edge:headless, chrome:headless, firefox:headless, ie]
+        browser: [edge, chrome, firefox, ie]
     steps:
     - uses: actions/setup-node@v1
       with:
