@@ -5,8 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test:edge": "testcafe -c 4 edge tests/",
+    "test:edge:headless": "testcafe -c 4 edge:headless tests/",
     "test:chrome": "testcafe -c 4 chrome tests/",
-    "test:firfox": "testcafe -c 4 firfox tests/"
+    "test:chrome:headless": "testcafe -c 4 chrome:headless tests/",
+    "test:firfox": "testcafe -c 4 firfox tests/",
+    "test:firfox:headless": "testcafe -c 4 firfox:headless tests/"
   },
   "author": "Abhinav Minhas",
   "license": "MIT",
