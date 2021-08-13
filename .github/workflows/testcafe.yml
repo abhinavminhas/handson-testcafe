@@ -15,7 +15,15 @@ jobs:
         node-version: ${{ matrix.node }}
     - name: Check out the repository
       uses: actions/checkout@v1
-    - name: Run tests (Edge - headless)
+    - name: Run tests (Edge - Headless)
       uses: DevExpress/testcafe-action@latest
       with:
           args: "edge:headless -c 6 tests/"
+    - name: Run tests (Chrome - Headless)
+      uses: DevExpress/testcafe-action@latest
+      with:
+          args: "chrome:headless -c 6 tests/"
+    - name: Run tests (Firefox - Headless)
+      uses: DevExpress/testcafe-action@latest
+      with:
+          args: "firefox:headless -c 6 tests/"
