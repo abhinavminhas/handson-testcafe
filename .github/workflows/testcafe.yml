@@ -9,15 +9,20 @@ jobs:
       matrix:
         os: [windows-latest]
         node: [12.x, 16.x]
-        browser: [edge, chrome, firefox, ie]
+        browser: [ie]
+        headlessbrowser: [edge, chrome, firefox]
     steps:
     - uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node }}
     - name: Check out the repository
       uses: actions/checkout@v1
-    - name: Run Tests
+    - name: Run Tests (All Browsers - Headless)
       uses: DevExpress/testcafe-action@latest
       with:
-          args: ${{ matrix.node }} -c 6 tests/
+          args: ${{ matrix.headlessbrowser }}:headless -c 6 tests/
+    - name: Run Tests (IE)
+      uses: DevExpress/testcafe-action@latest
+      with:
+          args: ${{ matrix.browser }} -c 6 tests/
           
