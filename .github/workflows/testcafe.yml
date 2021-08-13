@@ -19,11 +19,3 @@ jobs:
       uses: DevExpress/testcafe-action@latest
       with:
           args: "edge:headless -c 4 tests/"
-    - name: Run tests (Chrome - headless)
-      uses: DevExpress/testcafe-action@latest
-      with:
-          args: "chrome:headless -c 4 tests/"
-    - name: Run tests (Firefox - headless)
-      uses: DevExpress/testcafe-action@latest
-      with:
-          args: "firefox:headless -c 4 tests/"
