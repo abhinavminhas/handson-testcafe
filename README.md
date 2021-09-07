@@ -1,6 +1,6 @@
 # **Getting Started - TestCafe**
 >[TestCafe](https://testcafe.io/)<br />
->![qtest-mstest-parser](https://github.com/abhinavminhas/qtest-mstest-parser/actions/workflows/main.yml/badge.svg)
+>![TestCafe Tests](https://github.com/abhinavminhas/handson-testcafe/actions/workflows/testcafe.yml/badge.svg)
 
 >*Ensure [Node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) are installed.*
 
