@@ -1,4 +1,5 @@
-name: TestCafe Tests (CI/Manual Trigger)
+# CI/Manual Trigger
+name: TestCafe Tests
 
 on:
   push:
