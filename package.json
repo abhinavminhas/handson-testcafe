@@ -8,8 +8,8 @@
     "test:edge:headless": "testcafe -c 4 edge:headless tests/",
     "test:chrome": "testcafe -c 4 chrome tests/",
     "test:chrome:headless": "testcafe -c 4 chrome:headless tests/",
-    "test:firfox": "testcafe -c 4 firfox tests/",
-    "test:firfox:headless": "testcafe -c 4 firfox:headless tests/",
+    "test:firfox": "testcafe -c 4 firefox tests/",
+    "test:firfox:headless": "testcafe -c 4 firefox:headless tests/",
     "test:ie": "testcafe -c 4 ie tests/"
   },
   "author": "Abhinav Minhas",
