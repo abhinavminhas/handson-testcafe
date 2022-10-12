@@ -18,11 +18,11 @@ jobs:
         node: [14.x, 16.x]
         headlessbrowser: [edge, chrome, firefox]
     steps:
-    - uses: actions/setup-node@v1
+    - uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node }}
     - name: Check out the repository
-      uses: actions/checkout@v1
+      uses: actions/checkout@v3
     - name: Run Tests (${{ matrix.headlessbrowser }}) Headless
       uses: DevExpress/testcafe-action@latest
       with:
@@ -37,11 +37,11 @@ jobs:
         node: [14.x, 16.x]
         browser: [ie]
     steps:
-    - uses: actions/setup-node@v1
+    - uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node }}
     - name: Check out the repository
-      uses: actions/checkout@v1
+      uses: actions/checkout@v3
     - name: Run Tests (${{ matrix.browser }})
       uses: DevExpress/testcafe-action@latest
       with:
@@ -56,11 +56,11 @@ jobs:
         node: [14.x, 16.x]
         headlessbrowser: [chrome, firefox]
     steps:
-    - uses: actions/setup-node@v1
+    - uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node }}
     - name: Check out the repository
-      uses: actions/checkout@v1
+      uses: actions/checkout@v3
     - name: Run Tests (${{ matrix.headlessbrowser }}) Headless
       uses: DevExpress/testcafe-action@latest
       with:
