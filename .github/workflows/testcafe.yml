@@ -15,7 +15,7 @@ jobs:
     strategy:
       matrix:
         os: [windows-latest]
-        node: [14.x, 16.x]
+        node: [16.x, 18.x]
         headlessbrowser: [edge, chrome, firefox]
     steps:
     - uses: actions/setup-node@v3
@@ -24,7 +24,7 @@ jobs:
     - name: Check out the repository
       uses: actions/checkout@v3
     - name: Run Tests (${{ matrix.headlessbrowser }}) Headless
-      uses: DevExpress/testcafe-action@latest
+      uses: DevExpress/testcafe-action@v0.0.6
       with:
           args: ${{ matrix.headlessbrowser }}:headless -c 6 tests/
           
@@ -34,7 +34,7 @@ jobs:
     strategy:
       matrix:
         os: [windows-latest]
-        node: [14.x, 16.x]
+        node: [16.x, 18.x]
         browser: [ie]
     steps:
     - uses: actions/setup-node@v3
@@ -43,7 +43,7 @@ jobs:
     - name: Check out the repository
       uses: actions/checkout@v3
     - name: Run Tests (${{ matrix.browser }})
-      uses: DevExpress/testcafe-action@latest
+      uses: DevExpress/testcafe-action@v0.0.6
       with:
           args: ${{ matrix.browser }} tests/
           
@@ -53,7 +53,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node: [14.x, 16.x]
+        node: [16.x, 18.x]
         headlessbrowser: [chrome, firefox]
     steps:
     - uses: actions/setup-node@v3
@@ -62,7 +62,7 @@ jobs:
     - name: Check out the repository
       uses: actions/checkout@v3
     - name: Run Tests (${{ matrix.headlessbrowser }}) Headless
-      uses: DevExpress/testcafe-action@latest
+      uses: DevExpress/testcafe-action@v0.0.6
       with:
           args: ${{ matrix.headlessbrowser }}:headless -c 6 tests/
           
