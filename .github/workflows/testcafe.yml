@@ -24,7 +24,7 @@ jobs:
     - name: Check out the repository
       uses: actions/checkout@v3
     - name: Run Tests (${{ matrix.headlessbrowser }}) Headless
-      uses: DevExpress/testcafe-action@latest
+      uses: DevExpress/testcafe-action@v0.0.6
       with:
           args: ${{ matrix.headlessbrowser }}:headless -c 6 tests/
           
@@ -43,7 +43,7 @@ jobs:
     - name: Check out the repository
       uses: actions/checkout@v3
     - name: Run Tests (${{ matrix.browser }})
-      uses: DevExpress/testcafe-action@latest
+      uses: DevExpress/testcafe-action@v0.0.6
       with:
           args: ${{ matrix.browser }} tests/
           
