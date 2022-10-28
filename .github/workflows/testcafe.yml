@@ -15,7 +15,7 @@ jobs:
     strategy:
       matrix:
         os: [windows-latest]
-        node: [14.x, 16.x]
+        node: [16.x, 18.x]
         headlessbrowser: [edge, chrome, firefox]
     steps:
     - uses: actions/setup-node@v3
@@ -34,7 +34,7 @@ jobs:
     strategy:
       matrix:
         os: [windows-latest]
-        node: [14.x, 16.x]
+        node: [16.x, 18.x]
         browser: [ie]
     steps:
     - uses: actions/setup-node@v3
