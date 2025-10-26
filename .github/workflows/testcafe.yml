@@ -57,7 +57,7 @@ jobs:
       matrix:
         os: [ubuntu-latest]
         node: [20.x, 22.x]
-        headlessbrowser: [chrome, firefox]
+        headlessbrowser: [edge, chrome, firefox]
     steps:
     - uses: actions/setup-node@v3
       with:
