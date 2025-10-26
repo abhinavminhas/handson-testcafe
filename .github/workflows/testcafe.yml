@@ -15,8 +15,8 @@ jobs:
     strategy:
       matrix:
         os: [windows-latest]
-        node: [16.x, 18.x]
-        headlessbrowser: [edge, chrome, firefox]
+        node: [20.x]
+        headlessbrowser: [edge, chrome]
     steps:
     - uses: actions/setup-node@v3
       with:
@@ -26,15 +26,17 @@ jobs:
     - name: Run Tests (${{ matrix.headlessbrowser }}) Headless
       uses: DevExpress/testcafe-action@v0.0.6
       with:
-          args: ${{ matrix.headlessbrowser }}:headless -c 6 tests/
+        version: "3.7.2"
+        args: ${{ matrix.headlessbrowser }}:headless -c 4 tests/
           
   test2:
+    if: ${{ false }}  # Disable IE tests as IE is deprecated
     name: TestCafe Tests - (WINDOWS/IE)
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         os: [windows-latest]
-        node: [16.x, 18.x]
+        node: [20.x]
         browser: [ie]
     steps:
     - uses: actions/setup-node@v3
@@ -45,16 +47,17 @@ jobs:
     - name: Run Tests (${{ matrix.browser }})
       uses: DevExpress/testcafe-action@v0.0.6
       with:
-          args: ${{ matrix.browser }} tests/
+        version: "3.7.2"
+        args: ${{ matrix.browser }} tests/
           
   test3:
-    name: TestCafe Tests - (UBUNTU)
+    name: TestCafe Tests - (UBUNTU/HEADLESS)
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node: [16.x, 18.x]
-        headlessbrowser: [chrome, firefox]
+        node: [20.x]
+        headlessbrowser: [edge, chrome, firefox]
     steps:
     - uses: actions/setup-node@v3
       with:
@@ -64,5 +67,26 @@ jobs:
     - name: Run Tests (${{ matrix.headlessbrowser }}) Headless
       uses: DevExpress/testcafe-action@v0.0.6
       with:
-          args: ${{ matrix.headlessbrowser }}:headless -c 6 tests/
-          
+        version: "3.7.2"
+        args: ${{ matrix.headlessbrowser }}:headless -c 4 tests/
+
+  test4:
+    if: ${{ false }}  # Disable Safari tests (Screen Recording permission issue on GitHub-hosted runners)
+    name: TestCafe Tests - (MACOS)
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [macos-latest]
+        node: [20.x]
+        browser: [safari]
+    steps:
+    - uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node }}
+    - name: Check out the repository
+      uses: actions/checkout@v3
+    - name: Run Tests (${{ matrix.browser }})
+      uses: DevExpress/testcafe-action@v0.0.6
+      with:
+        version: "3.7.2"
+        args: ${{ matrix.browser }} tests/      
