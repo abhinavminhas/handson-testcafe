@@ -27,7 +27,7 @@ jobs:
       uses: DevExpress/testcafe-action@v0.0.6
       with:
         version: "3.7.2"
-        args: ${{ matrix.headlessbrowser }}:headless -c 6 tests/
+        args: ${{ matrix.headlessbrowser }}:headless -c 2 tests/
           
   test2:
     if: ${{ false }}  # Disable IE tests as IE is deprecated
@@ -68,7 +68,7 @@ jobs:
       uses: DevExpress/testcafe-action@v0.0.6
       with:
         version: "3.7.2"
-        args: ${{ matrix.headlessbrowser }}:headless -c 6 tests/
+        args: ${{ matrix.headlessbrowser }}:headless -c 2 tests/
 
   test4:
     if: ${{ false }}  # Disable Safari tests (Screen Recording permission issue on GitHub-hosted runners)
