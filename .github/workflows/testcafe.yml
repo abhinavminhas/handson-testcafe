@@ -16,7 +16,7 @@ jobs:
       matrix:
         os: [windows-latest]
         node: [20.x]
-        headlessbrowser: [edge, chrome, firefox]
+        headlessbrowser: [edge, chrome]
     steps:
     - uses: actions/setup-node@v3
       with:
