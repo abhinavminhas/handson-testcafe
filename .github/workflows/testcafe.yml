@@ -13,16 +13,10 @@ jobs:
     name: TestCafe Tests - (WINDOWS/HEADLESS)
     runs-on: ${{ matrix.os }}
     strategy:
-        matrix:
-          os: [windows-latest]
-          node: [20.x]
-          include:
-            - headlessbrowser: edge
-              concurrency: 4
-            - headlessbrowser: chrome
-              concurrency: 4
-            - headlessbrowser: firefox
-              concurrency: 1
+      matrix:
+        os: [windows-latest]
+        node: [20.x]
+        headlessbrowser: [edge, chrome, firefox]
     steps:
     - uses: actions/setup-node@v3
       with:
@@ -33,7 +27,7 @@ jobs:
       uses: DevExpress/testcafe-action@v0.0.6
       with:
         version: "3.7.2"
-        args: ${{ matrix.headlessbrowser }}:headless -c ${{ matrix.concurrency }} tests/
+        args: ${{ matrix.headlessbrowser }}:headless -c 4 tests/
           
   test2:
     if: ${{ false }}  # Disable IE tests as IE is deprecated
