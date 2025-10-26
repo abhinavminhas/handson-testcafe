@@ -34,7 +34,7 @@ jobs:
     strategy:
       matrix:
         os: [windows-latest]
-        node: [16.x, 18.x]
+        node: [20.x, 22.x]
         browser: [ie]
     steps:
     - uses: actions/setup-node@v3
@@ -53,7 +53,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node: [16.x, 18.x]
+        node: [20.x, 22.x]
         headlessbrowser: [chrome, firefox]
     steps:
     - uses: actions/setup-node@v3
