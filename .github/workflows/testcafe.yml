@@ -30,6 +30,7 @@ jobs:
         args: ${{ matrix.headlessbrowser }}:headless -c 6 tests/
           
   test2:
+    if: ${{ false }}  # Disable IE tests as IE is deprecated
     name: TestCafe Tests - (WINDOWS/IE)
     runs-on: ${{ matrix.os }}
     strategy:
