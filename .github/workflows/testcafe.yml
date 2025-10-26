@@ -26,7 +26,8 @@ jobs:
     - name: Run Tests (${{ matrix.headlessbrowser }}) Headless
       uses: DevExpress/testcafe-action@v0.0.6
       with:
-          args: ${{ matrix.headlessbrowser }}:headless -c 6 tests/
+        version: "3.7.2"
+        args: ${{ matrix.headlessbrowser }}:headless -c 6 tests/
           
   test2:
     name: TestCafe Tests - (WINDOWS/IE)
@@ -45,7 +46,8 @@ jobs:
     - name: Run Tests (${{ matrix.browser }})
       uses: DevExpress/testcafe-action@v0.0.6
       with:
-          args: ${{ matrix.browser }} tests/
+        version: "3.7.2"
+        args: ${{ matrix.browser }} tests/
           
   test3:
     name: TestCafe Tests - (UBUNTU)
@@ -64,5 +66,6 @@ jobs:
     - name: Run Tests (${{ matrix.headlessbrowser }}) Headless
       uses: DevExpress/testcafe-action@v0.0.6
       with:
-          args: ${{ matrix.headlessbrowser }}:headless -c 6 tests/
+        version: "3.7.2"
+        args: ${{ matrix.headlessbrowser }}:headless -c 6 tests/
           
