@@ -51,7 +51,7 @@ jobs:
         args: ${{ matrix.browser }} tests/
           
   test3:
-    name: TestCafe Tests - (UBUNTU)
+    name: TestCafe Tests - (UBUNTU/HEADLESS)
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -69,4 +69,23 @@ jobs:
       with:
         version: "3.7.2"
         args: ${{ matrix.headlessbrowser }}:headless -c 6 tests/
-          
+
+  test4:
+    name: TestCafe Tests - (MACOS)
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [macos-latest]
+        node: [20.x, 22.x]
+        browser: [safari]
+    steps:
+    - uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node }}
+    - name: Check out the repository
+      uses: actions/checkout@v3
+    - name: Run Tests (${{ matrix.browser }})
+      uses: DevExpress/testcafe-action@v0.0.6
+      with:
+        version: "3.7.2"
+        args: ${{ matrix.browser }} tests/      
