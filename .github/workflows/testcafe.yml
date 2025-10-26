@@ -71,6 +71,7 @@ jobs:
         args: ${{ matrix.headlessbrowser }}:headless -c 6 tests/
 
   test4:
+    if: ${{ false }}  # Disable Safari tests (Screen Recording permission issue on GitHub-hosted runners)
     name: TestCafe Tests - (MACOS)
     runs-on: ${{ matrix.os }}
     strategy:
