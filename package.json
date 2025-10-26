@@ -16,5 +16,8 @@
   "license": "MIT",
   "devDependencies": {
     "testcafe": "^3.7.2"
+  },
+  "overrides": {
+    "glob": "^9.0.0"
   }
 }
